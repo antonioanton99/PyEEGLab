@@ -2,7 +2,7 @@ from typing import List
 
 import numpy as np
 import pandas as pd
-from scipy.integrate import simps
+from scipy.integrate import simpson
 
 from ...pipeline import Preprocessor
 
@@ -43,7 +43,7 @@ class AbsoluteArea(Preprocessor):
     def run(self, data: List[pd.DataFrame], **kwargs) -> List[pd.DataFrame]:
 
         def absolute_area(array: np.ndarray) -> np.ndarray:
-            return simps(np.abs(array), dx=1e-6)
+            return simpson(np.abs(array), dx=1e-6)
 
         return [
             d.apply(absolute_area, raw=True).to_frame(name='Absolute Area')
