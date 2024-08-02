@@ -39,6 +39,10 @@ If you need a bleeding edge version, you can install it directly from GitHub:
 
     pip install git+https://github.com/AlessioZanga/PyEEGLab@develop
 
+Modified version:
+
+    pip install -e git+https://github.com/antonioanton99/PyEEGLab@master
+
 ## Out-Of-The-Box Supported Datasets
 
 The following datasets will work upon downloading:
